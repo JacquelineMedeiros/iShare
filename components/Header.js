@@ -1,0 +1,67 @@
+import React from "react";
+import { View, Image, Text, StyleSheet } from "react-native";
+import { Feather, FontAwesome, Ionicons } from "@expo/vector-icons";
+
+const Header = (props) => {
+  return (
+    <View style={styles.containerHeader}>
+      <Image style={styles.logo} source={require("../images/logo.jpg")} />
+      <View style={styles.tabContainer}>
+        <View>
+          <Feather name="menu" color="#474747" size={32} />
+        </View>
+        <View>
+          <FontAwesome name="home" color="#474747" size={32} />
+        </View>
+        <View>
+          <Ionicons name="md-add-circle" color="#09756c" size={32} />
+        </View>
+        <View>
+          <Ionicons name="ios-chatbubbles" color="#474747" size={32} />
+        </View>
+        <View>
+          <Ionicons name="md-notifications" color="#474747" size={32} />
+        </View>
+      </View>
+    </View>
+  );
+};
+
+const styles = StyleSheet.create({
+  containerHeader: {
+    flex: 1,
+    flexDirection: "column",
+    backgroundColor: "#e6ecea",
+    justifyContent: "flex-start",
+    alignItems: "flex-start",
+    paddingTop: "1%",
+    color: "#e6ecea",
+  },
+
+  tabContainer: {
+    backgroundColor: "#e6ecea",
+    width: "100%",
+    flexDirection: "row",
+    justifyContent: "space-around",
+    paddingTop: 3,
+    alignItems: "center",
+  },
+
+  logo: {
+    marginTop: "6%",
+    marginLeft: "3%",
+    width: 90,
+    height: 70,
+  },
+
+  iconDescription: {
+    fontSize: 10,
+    paddingBottom: "3%",
+  },
+
+  textWhite: {
+    color: "black",
+    marginVertical: 10,
+  },
+});
+export default Header;
