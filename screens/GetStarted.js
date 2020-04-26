@@ -12,11 +12,11 @@ import { createStackNavigator, createAppContainer } from 'react-navigation';
 import * as firebase from "firebase";
 
 export default class GetStarted extends React.Component {
-  componentDidMount() {
-    firebase.auth().onAuthStateChanged((user) => {
-      this.props.navigation.navigate(user ? "App" : "Auth");
-    });
-  }
+//   componentDidMount() {
+//     firebase.auth().onAuthStateChanged((user) => {
+//       this.props.navigation.navigate(user ? "App" : "Auth");
+//     });
+//   }
 
   render() {
     return (

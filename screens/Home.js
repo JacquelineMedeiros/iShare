@@ -9,12 +9,6 @@ import {
 } from "react-native";
 import Header from "../components/Header";
 
-
-import Menu from "./screens/Menu";
-import Message from "./screens/Message";
-import Notification from "./screens/Notification";
-import Post from "./screens/Post";
-
 export default class Home extends React.Component {
 
   render() {
@@ -24,12 +18,13 @@ export default class Home extends React.Component {
           <Header />
         </View>
         <View style={styles.childContainer}>
-          <Text style={{ fontSize: 30 }}>This is home</Text>
+          <Text style={{ fontSize: 30 }}>This is Home</Text>
         </View>
       </View>
-    );
+      );
+    }
   }
-}
+
 
 const styles = StyleSheet.create({
   container: {

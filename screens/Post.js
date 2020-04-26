@@ -7,13 +7,10 @@ import {
   TextInput,
   TouchableOpacity,
 } from "react-native";
-import Header from "../components/Header";
-import Menu from "./screens/Menu";
-import Message from "./screens/Message";
-import Notification from "./screens/Notification";
-import Menu from "./screens/Menu";
+
 
 export default class Post extends React.Component {
+
 
   render() {
     return (
@@ -22,12 +19,12 @@ export default class Post extends React.Component {
           <Header />
         </View>
         <View style={styles.childContainer}>
-          <Text style={{ fontSize: 30 }}>This is message</Text>
+          <Text style={{ fontSize: 30 }}>This is Home</Text>
         </View>
       </View>
-    );
+      );
+    }
   }
-}
 
 const styles = StyleSheet.create({
   container: {

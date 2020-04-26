@@ -9,7 +9,7 @@ import {
 } from "react-native";
 import Header from "../components/Header";
 
-export default class Home extends React.Component {
+export default class Recipes extends React.Component {
 
   render() {
     return (

@@ -2,9 +2,14 @@ import React from "react";
 import { View, Image, Text, StyleSheet, TouchableWithoutFeedback } from "react-native";
 import { Feather, FontAwesome, Ionicons } from "@expo/vector-icons";
 
-
 const Header = (props) => {
-  
+  const {
+    navigationState,
+    navigation,
+    activeTintColor,
+    inactiveTintColor
+  } = props;
+  const activeTabIndex = navigation.state.index;
   
   return (
     <View style={styles.containerHeader}>

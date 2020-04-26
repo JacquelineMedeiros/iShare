@@ -1,12 +1,23 @@
-import React, { useState } from "react";
+import React from "react";
+import { StyleSheet, View } from "react-native";
 import { createAppContainer, createSwitchNavigator } from 'react-navigation';
 import { createStackNavigator } from 'react-navigation-stack';
+import { createBottomTabNavigator } from 'react-navigation-tabs';
+import { Feather, FontAwesome, Ionicons } from "@expo/vector-icons";
+
+
 
 import firebase from 'firebase';
 
+import GetStarted from './screens/GetStarted';
 import Login from './screens/Login';
 import SignUp from './screens/SignUp';
 import Home from './screens/Home';
+import Menu from './screens/Menu';
+import Message from './screens/Message';
+import Notification from './screens/Notification';
+import Post from './screens/Post';
+
 
 
 //configuration details (provided by Firebase)
@@ -24,14 +35,14 @@ const firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 
 //create application navigation stack
-const appStack = createStackNavigator({
-  Home: {
-    screen: Home,
-    navigationOptions: {
-      headerShown: false, //No header in this screen
-    },
-  },
-});
+// const appStack = createStackNavigator({
+//   Home: {
+//     screen: Home,
+//     navigationOptions: {
+//       headerShown: false, //No header in this screen
+//     },
+//   },
+// });
 
 //create authentication navigation stack
 const AuthStack = createStackNavigator({
@@ -51,17 +62,61 @@ const AuthStack = createStackNavigator({
   
 });
 
+const AppTabNavigator = createBottomTabNavigator (
+  {
+
+    Home: {
+      screen: Home,
+      navigationOptions: {
+        tabBarIcon: ({tintColor}) => <FontAwesome name="home" color="#474747" size={32}/>
+      }
+    },
+
+    Menu: {
+      screen: Menu,
+      navigationOptions: {
+        tabBarIcon: ({tintColor}) => <Feather name="menu" color="#474747" size={32}/>
+      }
+    },
+    
+    Post: {
+      screen: Post,
+      navigationOptions: {
+        tabBarIcon: ({tintColor}) => <Ionicons name="md-add-circle" color="#09756c" size={32}/>
+      }
+    },
+    Message: {
+      screen: Message,
+      navigationOptions: {
+        tabBarIcon: ({tintColor}) => <Ionicons name="ios-chatbubbles" color="#474747" size={32}/>
+      }
+    },
+
+    Notification: {
+      screen: Notification,
+      navigationOptions: {
+        tabBarIcon: ({tintColor}) => <Ionicons name="md-notifications" color="#474747" size={32} />
+      }
+    }
+  },
+);
+  
+
+
 
 export default createAppContainer(
   createSwitchNavigator({
-    //GetStarted: GetStarted
+    //GetStarted: GetStarted,
     Home: Home,
-    App: appStack,
+    //Notification: Notification,
+    App: AppTabNavigator,
     Auth: AuthStack
   },
   {
     initialRouteName: "Home"
+    //initialRouteName: "Notification"
+    //initialRouteName: "Post"
+    //initialRouteName: "Message"
     //initialRouteName: "GetStarted"
   })
 );
-

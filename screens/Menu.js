@@ -21,9 +21,9 @@ export default class Menu extends React.Component {
           <Text style={{ fontSize: 30 }}>This is menu</Text>
         </View>
       </View>
-    );
+      );
+    }
   }
-}
 
 const styles = StyleSheet.create({
   container: {

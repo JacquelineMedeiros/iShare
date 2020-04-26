@@ -7,11 +7,7 @@ import {
   TextInput,
   TouchableOpacity,
 } from "react-native";
-import Header from "../components/Header";
-import Menu from "./screens/Menu";
-import Message from "./screens/Message";
-import Home from "./screens/Home";
-import Post from "./screens/Post";
+
 
 export default class Notification extends React.Component {
 
@@ -22,13 +18,12 @@ export default class Notification extends React.Component {
           <Header />
         </View>
         <View style={styles.childContainer}>
-          <Text style={{ fontSize: 30 }}>This is notification</Text>
+          <Text style={{ fontSize: 30 }}>This is Notification</Text>
         </View>
       </View>
-    );
+      );
+    }
   }
-}
-
 const styles = StyleSheet.create({
   container: {
     flex: 1,
