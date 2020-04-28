@@ -17,29 +17,23 @@ export default class Home extends React.Component {
         <View style={styles.header}>
           <Header />
         </View>
-        <View style={styles.childContainer}>
-          <Text style={{ fontSize: 30 }}>This is Home</Text>
+        <View>
+          <Text style={{ fontSize: 30 }}>This is home</Text>
         </View>
       </View>
       );
     }
   }
 
-
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#eef",
-    flexDirection: "column"
+    backgroundColor: "#fffdfa",
+    flexDirection: "column",
+    height: "100%"
   },
-  childContainer: {
-    justifyContent: "center",
-    alignItems: "center",
-    marginVertical: 100
-  },
+
   header: {
-    backgroundColor: "cyan",
-    width: "100%",
     height: "15%"
   }
 });

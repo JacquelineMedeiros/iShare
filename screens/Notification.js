@@ -8,6 +8,7 @@ import {
   TouchableOpacity,
 } from "react-native";
 
+import Header from "../components/Header";
 
 export default class Notification extends React.Component {
 
@@ -17,27 +18,23 @@ export default class Notification extends React.Component {
         <View style={styles.header}>
           <Header />
         </View>
-        <View style={styles.childContainer}>
+        <View>
           <Text style={{ fontSize: 30 }}>This is Notification</Text>
         </View>
       </View>
       );
     }
   }
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#eef",
-    flexDirection: "column"
+    backgroundColor: "#fffdfa",
+    flexDirection: "column",
+    height: "100%"
   },
-  childContainer: {
-    justifyContent: "center",
-    alignItems: "center",
-    marginVertical: 100
-  },
+
   header: {
-    backgroundColor: "cyan",
-    width: "100%",
     height: "15%"
   }
 });

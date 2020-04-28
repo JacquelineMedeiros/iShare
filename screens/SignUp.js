@@ -16,6 +16,8 @@ import firebase from "firebase";
 
 export default class SignUp extends React.Component {
 
+
+
   createAccountCreatedAlert = () =>
     Alert.alert(
       "Account created",
@@ -44,8 +46,8 @@ export default class SignUp extends React.Component {
       .createUserWithEmailAndPassword(this.state.email, this.state.password)
       .then(() => this.props.navigation.navigate("Home"))      
       .catch((error) => this.setState({ errorMessage: error.message }));
-  };
-
+    };
+    
   render() {
     return (
       <View style={styles.container}>
@@ -87,7 +89,7 @@ export default class SignUp extends React.Component {
           </View>
           <Text style={styles.paragraph}>Already have an account?</Text>
           <TouchableOpacity onPress={() => this.props.navigation.navigate('Login')}>
-            <Text style={(fontWeight="500", color="#00554e")}>Login</Text>
+            <Text style={(styles.login)}>Login</Text>
           </TouchableOpacity>
         </View>
       </View>
@@ -113,7 +115,7 @@ const styles = StyleSheet.create({
 
 
   paragraph: {
-    fontSize: 15,
+    fontSize: 16,
   },
 
   body: {
@@ -144,8 +146,9 @@ const styles = StyleSheet.create({
     borderRadius: 90,
   },
 
+
   login: {
-    fontSize: 15,
+    fontSize: 18,
     color: "#00554e",
     fontWeight: "bold",
   },

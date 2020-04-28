@@ -28,17 +28,12 @@ export default class Menu extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#eef",
-    flexDirection: "column"
+    backgroundColor: "#fffdfa",
+    flexDirection: "column",
+    height: "100%"
   },
-  childContainer: {
-    justifyContent: "center",
-    alignItems: "center",
-    marginVertical: 100
-  },
+
   header: {
-    backgroundColor: "cyan",
-    width: "100%",
     height: "15%"
   }
 });
