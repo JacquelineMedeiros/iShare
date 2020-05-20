@@ -1,15 +1,18 @@
 import React from "react";
-import { View, Image, StyleSheet } from "react-native";
+import { SafeAreaView, View, Image, StyleSheet } from "react-native";
 
+//create constant header (to be used accrossed the application - const because it should not change)
+//used const because it is a functional (stateless component) that takes props as argument and return a react element
 const Header = (props) => {  
   
   return (
     <View style={styles.containerHeader}>
-      <Image style={styles.logo} source={require("../images/logo.jpeg")} />
+      <Image style={styles.logo} source={require("../../images/logo.jpeg")} />
     </View>
   );
 };
 
+//create const styles 
 const styles = StyleSheet.create({
 
   containerHeader: {

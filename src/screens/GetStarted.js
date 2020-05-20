@@ -1,47 +1,41 @@
-import React, { useState } from "react";
+import React from "react";
 import {
   View,
   StyleSheet,
   Text,
   Image,
   Button,
-  TextInput,
-  TouchableOpacity,
 } from "react-native";
-import { createStackNavigator, createAppContainer } from 'react-navigation';
-import * as firebase from "firebase";
 
 export default class GetStarted extends React.Component {
-  // componentDidMount() {
-  //   firebase.auth().onAuthStateChanged((user) => {
-  //     this.props.navigation.navigate(user ? "App" : "Auth");
-  //   });
-  // }
 
+  //renders screen view the view
   render() {
     return (
       <View style={styles.container}>
         <View style={styles.body}>
-          <Image style={styles.logo} source={require("../images/logo.jpg")} />
+          <Image style={styles.logo} source={require("../../images/logo.jpg")} />
           <Text style={styles.heading}>Get started</Text>
           <View style={styles.imageContainer}>
             <Image
               style={styles.userImage}
-              source={require("../images/user.png")}
+              source={require("../../images/user.png")}
             />
 
             <Image
               style={styles.userImage}
-              source={require("../images/newUser.png")}
+              source={require("../../images/newUser.png")}
             />
           </View>
 
           <View style={styles.buttonContainer}>
             <View style={styles.button}>
-              <Button title="LOGIN" color="#00554e" onPress={() => this.props.navigation.navigate('Login')} />
+              <Button title="LOGIN" color="#00554e" 
+              onPress={() => this.props.navigation.navigate('Login')} />
             </View>
             <View style={styles.button}>
-              <Button title="SIGN UP" color="grey" onPress={() => this.props.navigation.navigate('SignUp')}/>
+              <Button title="SIGN UP" color="grey" 
+              onPress={() => this.props.navigation.navigate('SignUp')}/>
             </View>
           </View>
         </View>
@@ -50,6 +44,7 @@ export default class GetStarted extends React.Component {
   }
 }
 
+//create style for the components
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -73,11 +68,13 @@ const styles = StyleSheet.create({
 
   body: {
     backgroundColor: "#e6ecea",
-    padding: 20,
-    height: "80%",
-    width: "80%",
+    padding: 10,
+    paddingTop: 40,
+    height: "85%",
+    width: "85%",
     alignItems: "center",
     alignContent: "center",
+    borderRadius: 16,
   },
 
   logo: {

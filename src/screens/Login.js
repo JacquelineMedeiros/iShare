@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import {
   View,
   StyleSheet,
@@ -23,7 +23,7 @@ export default class Login extends React.Component {
       .auth()
       .signInWithEmailAndPassword(email, password)
       .catch(error => this.setState({ errorMessage: error.message }));
-      return this.props.navigation.navigate('Home');
+      //console.log(error)
   };
 
   render() {
@@ -31,7 +31,7 @@ export default class Login extends React.Component {
       
       <View style={styles.container}>
         <View style={styles.body}>
-          <Image style={styles.logo} source={require("../images/logo.jpg")} />
+          <Image style={styles.logo} source={require("../../images/logo.jpeg")} />
 
           <Text style={styles.heading}>Login</Text>
 
@@ -73,7 +73,7 @@ export default class Login extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#01a89e",
+    backgroundColor: "#ffffff",
     alignItems: "center",
     justifyContent: "center",
   },
@@ -91,20 +91,23 @@ const styles = StyleSheet.create({
   },
 
   body: {
-    backgroundColor: "#e6ecea",
-    padding: 20,
-    height: "80%",
-    width: "80%",
+    backgroundColor: "#ffffff",
+    padding: 10,
+    paddingTop: 40,
+    height: "85%",
+    width: "85%",
     alignItems: "center",
     alignContent: "center",
+    borderRadius: 16,
   },
 
   input: {
     borderWidth: 1,
+    borderRadius: 10,
     borderColor: "#00554e",
-    padding: 8,
+    padding: 6,
     margin: 10,
-    width: 200,
+    width: 230,
   },
 
   logo: {
@@ -127,12 +130,11 @@ const styles = StyleSheet.create({
   signUp: {
     fontWeight: "bold",
     fontSize: 18,
-    color: "#7c8515",
+    color: "#00554e",
 
   },
 
   errorMessage: {
-
     justifyContent: 'center',
     alignItems: 'center'    
   }
