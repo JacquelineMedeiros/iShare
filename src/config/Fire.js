@@ -38,6 +38,7 @@ class Fire {
       //declare path to firebase storage
       let upload = firebase.storage().ref(filename).put(file);
 
+      //uoload the file
       upload.on(
         "state_changed",
         (snapshot) => {},
@@ -45,6 +46,7 @@ class Fire {
           rej(err);
         },
         async () => {
+          //download url 
           const url = await upload.snapshot.ref.getDownloadURL();
           res(url);
         }
@@ -74,12 +76,13 @@ class Fire {
 
   //add new post async / await function
   addPost = async ({ title, description, expireDate, localUri }) => {
-    //create const remoteURI
+    //create const remoteURI and upload the image to folder photos in the firebase storage using the user id as id
     const remoteUri = await this.uploadPhoto(
       localUri,
       `photos/${this.uid}/${Date.now()}`
     );
 
+    //connects to the collection post on firestore and add the fields 
     return new Promise((res, rej) => {
       this.firestore
         .collection("posts")

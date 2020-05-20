@@ -16,17 +16,22 @@ import Fire from "../config/Fire";
 const firebase = require("firebase");
 require("firebase/firestore");
 
+//create products arrays with itemName and expireData
 products = [
   {
     itemName: "",
     expireDate: "",
   },
 ];
+
+//create and export class Inventory
 export default class Inventory extends React.Component {
+  //set initial state of products to empty
   state = {
     products: [],
   };
 
+  //function that will be loaded when the components of the screen mounts. get the user id and search on firebase for the inventory of that user
   componentDidMount() {
     var that = this;
     let userID = firebase.auth().currentUser.uid;
@@ -39,11 +44,12 @@ export default class Inventory extends React.Component {
           console.log("No matching documents.");
           return;
         }
-
+        //for each that loops on the document folder and returns the data. set the state of products as product to populate array
         snapshot.forEach((doc) => {
           var product = that.state.products;
           const data = (doc.id, "=>", doc.data());
           that.setState({ products: product });
+          //push the data to product to be displayed on the screen
           product.push({
             itemName: data.itemName,
             expireDate: data.expireDate,
